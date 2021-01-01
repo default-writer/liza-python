@@ -39,6 +39,9 @@ while True:
             if 7 in rules:
                 a = [n for n in a if n % 11 in range(1,11)]
                 rules.remove(7)
+            if 8 in rules:
+                a = [n for n in a if n % 13 in range(1,13)]
+                rules.remove(8)
         rules.remove(3)
     if rule == 4:
         a = [n for n in a if n % 3 == 0] if str(input(f"это число кратно 3? ")) == 'y' else [n for n in a if n % 3 in range(1,3)]
@@ -55,6 +58,9 @@ while True:
             if 7 in rules:
                 a = [n for n in a if n % 11 in range(1,11)]
                 rules.remove(7)
+            if 8 in rules:
+                a = [n for n in a if n % 13 in range(1,13)]
+                rules.remove(8)
         rules.remove(4)
     if rule == 5:
         a = [n for n in a if n % 5 == 0] if str(input(f"это число кратно 5? ")) == 'y' else [n for n in a if n % 5 in range(1,5)]
@@ -71,6 +77,9 @@ while True:
             if 7 in rules:
                 a = [n for n in a if n % 11 in range(1,11)]
                 rules.remove(7)
+            if 8 in rules:
+                a = [n for n in a if n % 13 in range(1,13)]
+                rules.remove(8)
         rules.remove(5)
     if rule == 6:
         a = [n for n in a if n % 7 == 0] if str(input(f"это число кратно 7? ")) == 'y' else [n for n in a if n % 7 in range(1,7)]
@@ -87,6 +96,9 @@ while True:
             if 7 in rules:
                 a = [n for n in a if n % 11 in range(1,11)]
                 rules.remove(7)
+            if 8 in rules:
+                a = [n for n in a if n % 13 in range(1,13)]
+                rules.remove(8)
         rules.remove(6)
     if rule == 7:
         a = [n for n in a if n % 11 == 0] if str(input(f"это число кратно 11? ")) == 'y' else [n for n in a if n % 11 in range(1,11)]
@@ -103,7 +115,29 @@ while True:
             if 6 in rules:
                 a = [n for n in a if n % 7 in range(1,7)]
                 rules.remove(6)
+            if 8 in rules:
+                a = [n for n in a if n % 13 in range(1,13)]
+                rules.remove(8)
         rules.remove(7)
+    if rule == 8:
+        a = [n for n in a if n % 13 == 0] if str(input(f"это число кратно 13? ")) == 'y' else [n for n in a if n % 13 in range(1,13)]
+        if a[0] % 13 == 0:
+            if 3 in rules:
+                a = [n for n in a if n % 2 in range(1,2)]
+                rules.remove(3)
+            if 4 in rules:
+                a = [n for n in a if n % 3 in range(1,3)]
+                rules.remove(4)
+            if 5 in rules:
+                a = [n for n in a if n % 5 in range(1,5)]
+                rules.remove(5)
+            if 6 in rules:
+                a = [n for n in a if n % 7 in range(1,7)]
+                rules.remove(6)
+            if 7 in rules:
+                a = [n for n in a if n % 11 in range(1,11)]
+                rules.remove(7)
+        rules.remove(8)
 
 print(f"это число {a[0]}")
 
