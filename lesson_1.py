@@ -11,7 +11,7 @@ max = 100
 
 a = list(range(min,max+1))
 
-rules = [0, 1, 2, 3, 4]
+rules = [0, 1, 2, 3, 4, 5, 6, 7]
 
 while True:
     if len(a) == 1:
@@ -27,6 +27,18 @@ while True:
     if rule == 3:
         a = [n for n in a if n % 2 == 0] if str(input(f"это число четное? ")) == 'y' else [n for n in a if n % 2 == 1]
         rules.remove(3)
+    if rule == 4:
+        a = [n for n in a if n % 3 == 0] if str(input(f"это число кратно 3? ")) == 'y' else [n for n in a if n % 3 in range(1,3)]
+        rules.remove(4)
+    if rule == 5:
+        a = [n for n in a if n % 5 == 0] if str(input(f"это число кратно 5? ")) == 'y' else [n for n in a if n % 5 in range(1,5)]
+        rules.remove(5)
+    if rule == 6:
+        a = [n for n in a if n % 7 == 0] if str(input(f"это число кратно 7? ")) == 'y' else [n for n in a if n % 7 in range(1,7)]
+        rules.remove(6)
+    if rule == 7:
+        a = [n for n in a if n % 11 == 0] if str(input(f"это число кратно 11? ")) == 'y' else [n for n in a if n % 11 in range(1,11)]
+        rules.remove(7)
 
 print(f"это число {a[0]}")
 
