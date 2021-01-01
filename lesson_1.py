@@ -1,4 +1,4 @@
-import random
+import random as rnd
 
 a = 0
 while a < 1 or a > 100: 
@@ -16,8 +16,8 @@ rules = [0, 1, 2, 3, 4, 5, 6, 7]
 while True:
     if len(a) == 1:
         break
-    b = random.choice(a)
-    rule = random.choice(rules)
+    b = rnd.choice(a)
+    rule = rnd.choice(rules)
     if rule == 0:
         a = [b] if str(input(f"это число {b}? ")) == 'y' else a[0: a.index(b)] + a[a.index(b) + 1:]
     if rule == 1:
@@ -25,19 +25,84 @@ while True:
     if rule == 2:
         a = a[0: a.index(b)] if str(input(f"это число меньше {b}? ")) == 'y' else a[a.index(b):]
     if rule == 3:
-        a = [n for n in a if n % 2 == 0] if str(input(f"это число четное? ")) == 'y' else [n for n in a if n % 2 == 1]
+        a = [n for n in a if n % 2 == 0] if str(input(f"это число четное? ")) == 'y' else [n for n in a if n % 2 in range(1,2)]
+        if a[0] % 3 == 0:
+            if 4 in rules:
+                a = [n for n in a if n % 2 in range(1,2)]
+                rules.remove(4)
+            if 5 in rules:
+                a = [n for n in a if n % 5 in range(1,5)]
+                rules.remove(5)
+            if 6 in rules:
+                a = [n for n in a if n % 7 in range(1,7)]
+                rules.remove(6)
+            if 7 in rules:
+                a = [n for n in a if n % 11 in range(1,11)]
+                rules.remove(7)
         rules.remove(3)
     if rule == 4:
         a = [n for n in a if n % 3 == 0] if str(input(f"это число кратно 3? ")) == 'y' else [n for n in a if n % 3 in range(1,3)]
+        if a[0] % 3 == 0:
+            if 3 in rules:
+                a = [n for n in a if n % 2 in range(1,2)]
+                rules.remove(3)
+            if 5 in rules:
+                a = [n for n in a if n % 5 in range(1,5)]
+                rules.remove(5)
+            if 6 in rules:
+                a = [n for n in a if n % 7 in range(1,7)]
+                rules.remove(6)
+            if 7 in rules:
+                a = [n for n in a if n % 11 in range(1,11)]
+                rules.remove(7)
         rules.remove(4)
     if rule == 5:
         a = [n for n in a if n % 5 == 0] if str(input(f"это число кратно 5? ")) == 'y' else [n for n in a if n % 5 in range(1,5)]
+        if a[0] % 5 == 0:
+            if 3 in rules:
+                a = [n for n in a if n % 2 in range(1,2)]
+                rules.remove(3)
+            if 4 in rules:
+                a = [n for n in a if n % 3 in range(1,3)]
+                rules.remove(4)
+            if 6 in rules:
+                a = [n for n in a if n % 7 in range(1,7)]
+                rules.remove(6)
+            if 7 in rules:
+                a = [n for n in a if n % 11 in range(1,11)]
+                rules.remove(7)
         rules.remove(5)
     if rule == 6:
         a = [n for n in a if n % 7 == 0] if str(input(f"это число кратно 7? ")) == 'y' else [n for n in a if n % 7 in range(1,7)]
+        if a[0] % 7 == 0:
+            if 3 in rules:
+                a = [n for n in a if n % 2 in range(1,2)]
+                rules.remove(3)
+            if 4 in rules:
+                a = [n for n in a if n % 3 in range(1,3)]
+                rules.remove(4)
+            if 5 in rules:
+                a = [n for n in a if n % 5 in range(1,5)]
+                rules.remove(5)
+            if 7 in rules:
+                a = [n for n in a if n % 11 in range(1,11)]
+                rules.remove(7)
         rules.remove(6)
     if rule == 7:
         a = [n for n in a if n % 11 == 0] if str(input(f"это число кратно 11? ")) == 'y' else [n for n in a if n % 11 in range(1,11)]
+        if a[0] % 11 == 0:
+            if 3 in rules:
+                a = [n for n in a if n % 2 in range(1,2)]
+                rules.remove(3)
+            if 4 in rules:
+                a = [n for n in a if n % 3 in range(1,3)]
+                rules.remove(4)
+            if 5 in rules:
+                a = [n for n in a if n % 5 in range(1,5)]
+                rules.remove(5)
+            if 6 in rules:
+                a = [n for n in a if n % 7 in range(1,7)]
+                rules.remove(6)
         rules.remove(7)
 
 print(f"это число {a[0]}")
